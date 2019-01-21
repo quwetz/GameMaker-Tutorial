@@ -1,0 +1,512 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Ein Tutorial zur Erstellung eines einfachen Breakout Klons in Gamemaker Studio 2">
+      
+      
+      
+        <meta name="author" content="David Unterweger">
+      
+      
+        <meta name="lang:clipboard.copy" content="In Zwischenablage kopieren">
+      
+        <meta name="lang:clipboard.copied" content="In Zwischenablage kopiert">
+      
+        <meta name="lang:search.language" content="de">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Keine Suchergebnisse">
+      
+        <meta name="lang:search.result.one" content="1 Suchergebnis">
+      
+        <meta name="lang:search.result.other" content="# Suchergebnisse">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>7 Die Ziegel - Gamemaker Tutorial - Brickout</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.11e41852.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#03a9f4">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#71-kollision-ball-und-ziegel" tabindex="1" class="md-skip">
+        Zum Inhalt
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Gamemaker Tutorial - Brickout" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Gamemaker Tutorial - Brickout
+              </span>
+              <span class="md-header-nav__topic">
+                7 Die Ziegel
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Suchbegriff eingeben
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Gamemaker Tutorial - Brickout" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Gamemaker Tutorial - Brickout
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="0 Einleitung" class="md-nav__link">
+      0 Einleitung
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="1 Installation" class="md-nav__link">
+      1 Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firststeps/" title="2 Erste Schritte" class="md-nav__link">
+      2 Erste Schritte
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sprites/" title="3 Importieren der Sprites" class="md-nav__link">
+      3 Importieren der Sprites
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bar/" title="4 Der Balken" class="md-nav__link">
+      4 Der Balken
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wall/" title="5 Die Seitenwände" class="md-nav__link">
+      5 Die Seitenwände
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ball1/" title="6 Der Ball" class="md-nav__link">
+      6 Der Ball
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        7 Die Ziegel
+      </label>
+    
+    <a href="./" title="7 Die Ziegel" class="md-nav__link md-nav__link--active">
+      7 Die Ziegel
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-kollision-ball-und-ziegel" title="7.1 Kollision Ball und Ziegel" class="md-nav__link">
+    7.1 Kollision Ball und Ziegel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feststellen-von-welcher-seite-der-ball-kollidiert" title="Feststellen von welcher Seite der Ball kollidiert" class="md-nav__link">
+    Feststellen von welcher Seite der Ball kollidiert
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-kollision-ball-und-ziegel" title="7.1 Kollision Ball und Ziegel" class="md-nav__link">
+    7.1 Kollision Ball und Ziegel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feststellen-von-welcher-seite-der-ball-kollidiert" title="Feststellen von welcher Seite der Ball kollidiert" class="md-nav__link">
+    Feststellen von welcher Seite der Ball kollidiert
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>7 Die Ziegel</h1>
+                
+                <div class="admonition abstract">
+<p class="admonition-title">Ziele</p>
+<p>In diesem Kapitel wirst die Ziegel erstellen und die Kollisionen zwischen Ziegel und Ball programmieren.</p>
+</div>
+<hr />
+<p>Erstelle ein Objekt mit dem Namen "obj_Ziegel" und weise ihm das Sprite <em>spr_Ziegel</em> zu.</p>
+<p>Füge dann einige Instanzen der Ziegel per Drag and Drop in den <em>room0</em> ein.</p>
+<p>Es sollte in etwa so aussehen:</p>
+<p><img alt="ziegel" src="../img/bricks.png" /></p>
+<h2 id="71-kollision-ball-und-ziegel">7.1 Kollision Ball und Ziegel<a class="headerlink" href="#71-kollision-ball-und-ziegel" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Ziel</p>
+<p>Wenn der Ball mit einem Ziegel kollidiert, sollen folgende Dinge passieren:<br />
+1. Der Ball soll abprallen, je nachdem von wo aus er auf einen Ziegel trifft<br />
+2. Der Ziegel soll entfernt werden</p>
+</div>
+<p>Die Kollision mit dem Ziegel programmieren wir wieder in einem Ereignis im <em>obj_Ball</em></p>
+<p>Gehe also im Workspace zu <em>obj_Ball</em> und füge ein Kollsisionsereignis mit <em>obj_Ziegel</em> ein.</p>
+<p>Leider ist das Abprallen diesmal nicht so einfach, wie mit den Seitenwänden, denn wir müssen feststellen ob der Ball von Oben bzw. Unten oder von der Seite mit dem Ziegel kollidiert. Je nachdem welcher Fall auftritt ist, müssen wir dann einfach nur wieder die Richtung in horizontaler oder vertikaler Richtung umkehren. (wie in 6.3)</p>
+<h3 id="feststellen-von-welcher-seite-der-ball-kollidiert">Feststellen von welcher Seite der Ball kollidiert<a class="headerlink" href="#feststellen-von-welcher-seite-der-ball-kollidiert" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Die Variablen <em>hspeed</em> und <em>vspeed</em></p>
+<p>In <em>hspeed</em> wird die horizontale (also seitliche) Geschwindigkeit eines Objekts gespeichert. Das ist die Anzahl an Pixel, die sich ein Objekt in jedem Schritt (Step) der Gameloop nach rechts bzw. links bewegt.<br />
+In <em>vspeed</em> wird die vertikale (also oben/unten) Geschwindigkeit eines Objekts gespeichert.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Kollisionshandling in Gamemaker</p>
+<p>Das Kollisionsereignis in Gamemaker wird aufgerufen, wenn sich die Kollisionsmasken zweier Objekte bereits überlappen. (Nicht kurz davor!)</p>
+</div>
+<p>Zum Zeitpunkt an dem eine Kollision auftritt, liegt der Ball bereits über dem Ziegel. Um festzustellen ob der Ball den Ziegel von der Seite oder von unten/oben trifft gehen wir folgendermaßen vor:</p>
+<ol>
+<li>Eine Kollision tritt auf.<br />
+<img alt="koll1" src="../img/brickcolldown.png" /></li>
+<li>Wir überprüfen, ob eine Kollision stattfindet, wenn wir den Ball um <em>-vspeed</em>-Pixel vertikal verschieben. Ist das der Fall muss die Kollision von der Seite entstanden sein. Wir müssen die Richtung des Balls in horizontaler Richtung umkehren. </li>
+<li>Ist die Bedingung in 2. nicht erfüllt überprüfen wir, ob der Ball immer noch kollidiert, wenn wir ihn um <em>-hspeed</em> Pixel in seitlicher Richtung verschieben. Wenn dann noch immer eine Kollision stattfindet, muss die Kollision von oben oder unten entstanden sein und wir müssen die Richtung vertikal umkehren.</li>
+<li>Zum Schluss muss man nur noch die Instanz des Ziegels zerstören</li>
+</ol>
+<p><strong>Diesen Algorithmus implementieren wir nun:</strong></p>
+<p>Suche in dem Kollisionsereignis zuerst nach <em>Wenn Objekt am Ort ist</em> unter Kollisionen. Gib als Objekt <em>obj_Ziegel</em> an und bei Y "-vspeed". Setze außerdem die beiden Häkchen bei <em>Relativ</em><br />
+Diese Bedingung überprüft nun, ob eine Kollision mit einer Instanz von <em>obj_Ziegel</em> entstehen würde, wenn der Ball an der Position (x,y-vspeed) wäre.
+<img alt="coll" src="../img/coll1.png" /></p>
+<p>Füge den Block <em>Umkehren</em> rechts (!) an den <em>Wenn Objekt am Ort ist</em> Block an und stelle die Richtung auf <em>Horizontal</em>
+<img alt="coll2" src="../img/coll2.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Achtung</p>
+<p>Wenn du den Block nicht von Rechts anhängst und das Ganze bei dir so aussieht:<br />
+<img alt="achtung" src="../img/error.png" /><br />
+Dann wird die Geschwindigkeit immer umgekehrt und nicht nur, wenn die Bedingung im Block darüber erfüllt ist.</p>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ball1/" title="6 Der Ball" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Zurück
+                </span>
+                6 Der Ball
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Creative Commons CC0
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.9e1f3b71.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.de.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

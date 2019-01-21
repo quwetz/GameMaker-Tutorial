@@ -1,0 +1,507 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Ein Tutorial zur Erstellung eines einfachen Breakout Klons in Gamemaker Studio 2">
+      
+      
+      
+        <meta name="author" content="David Unterweger">
+      
+      
+        <meta name="lang:clipboard.copy" content="In Zwischenablage kopieren">
+      
+        <meta name="lang:clipboard.copied" content="In Zwischenablage kopiert">
+      
+        <meta name="lang:search.language" content="de">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Keine Suchergebnisse">
+      
+        <meta name="lang:search.result.one" content="1 Suchergebnis">
+      
+        <meta name="lang:search.result.other" content="# Suchergebnisse">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>4 Der Balken - Gamemaker Tutorial - Brickout</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.11e41852.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#03a9f4">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#4-der-balken" tabindex="1" class="md-skip">
+        Zum Inhalt
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Gamemaker Tutorial - Brickout" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Gamemaker Tutorial - Brickout
+              </span>
+              <span class="md-header-nav__topic">
+                4 Der Balken
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Suchbegriff eingeben
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Gamemaker Tutorial - Brickout" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Gamemaker Tutorial - Brickout
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="0 Einleitung" class="md-nav__link">
+      0 Einleitung
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="1 Installation" class="md-nav__link">
+      1 Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firststeps/" title="2 Erste Schritte" class="md-nav__link">
+      2 Erste Schritte
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sprites/" title="3 Importieren der Sprites" class="md-nav__link">
+      3 Importieren der Sprites
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        4 Der Balken
+      </label>
+    
+    <a href="./" title="4 Der Balken" class="md-nav__link md-nav__link--active">
+      4 Der Balken
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-objekt-erstellen" title="4.1. Objekt erstellen" class="md-nav__link">
+    4.1. Objekt erstellen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-bewegung" title="4.2 Bewegung" class="md-nav__link">
+    4.2 Bewegung
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wall/" title="5 Die Seitenwände" class="md-nav__link">
+      5 Die Seitenwände
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ball1/" title="6 Der Ball" class="md-nav__link">
+      6 Der Ball
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../brick/" title="7 Die Ziegel" class="md-nav__link">
+      7 Die Ziegel
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-objekt-erstellen" title="4.1. Objekt erstellen" class="md-nav__link">
+    4.1. Objekt erstellen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-bewegung" title="4.2 Bewegung" class="md-nav__link">
+    4.2 Bewegung
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="4-der-balken">4. Der Balken<a class="headerlink" href="#4-der-balken" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Ziele</p>
+<p>In diesem Kapitel wirst das Objekt für den Balken erstellen und programmieren.</p>
+</div>
+<hr />
+<h2 id="41-objekt-erstellen">4.1. Objekt erstellen<a class="headerlink" href="#41-objekt-erstellen" title="Permanent link">&para;</a></h2>
+<p>Klicke mit der rechten Maustaste unter <em>Ressources</em> auf <strong>Objekte</strong> -&gt; <strong>Objekt erstellen</strong></p>
+<p>Im Workspace siehst du nun das neu erstellte Objekt. Gib ihm den Namen "obj_Balken" und wähle das Sprite für den Balken aus.</p>
+<p><img alt="objektfenster" src="../img/objectwindow.png" /></p>
+<p>Mache danach einen Doppelklick auf <strong>room0</strong> (unter Ressourcen-&gt;Räume) und füge das Objekt mit <em>Drag and Drop</em> in den Raum ein.</p>
+<p>Du kannst das Spiel nun auch schon testen!</p>
+<p>Zum Starten musst du einfach auf den "Play"-Button in der oberen Leiste drücken.</p>
+<p><img alt="testgame" src="../img/test1.png" /></p>
+<p>Allerdings tut sich in unserem Spiel ja noch gar nichts!</p>
+<hr />
+<h2 id="42-bewegung">4.2 Bewegung<a class="headerlink" href="#42-bewegung" title="Permanent link">&para;</a></h2>
+<p>Der Balken soll sich bewegen, wenn du auf die Pfeiltaste <em>links</em> bzw. <em>rechts</em> drückst.</p>
+<p>Lege als Erstes eine Variable für die Bewegungsgeschwindigkeit an.
+Gehe dafür im Workspace wieder zum <em>obj_Balken</em> und klicke auf <strong>Variablendefinitionen</strong>-&gt;<strong>Hinzufügen</strong> und erstelle eine Variable vom Typ <em>Real</em>, gib ihr den Namen "geschwindigkeit" und setze den Standardwert auf <em>15</em>.</p>
+<p><img alt="variable" src="../img/variable.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Ereignisse</p>
+<p>Das Verhalten von Gamemaker Objekten wird über sogenannte Ereignisse geregelt. Ereignisse sind z.B. das Drücken einer Taste oder eine Kollision.</p>
+</div>
+<p>Klicke auf <strong>Ereignis hinzufügen</strong>-&gt;<strong>Taste gehalten</strong>-&gt;<strong>links</strong> um ein neues Ereignis hinzuzufügen.</p>
+<p><img alt="ereignis hinzufügen" src="../img/ereignis.png" /></p>
+<p>Im Workspace siehst du nun ein neues Fenster für das gerade erstellte Ereignis. </p>
+<div class="admonition tip">
+<p class="admonition-title">Ansicht ändern im Workspace</p>
+<p>Wenn du im Workspace die mittlere Maustaste gedrückt hältst kannst du die Ansicht verschieben. Mit <em>Strg</em> und Mausrad kannst du Zoomen.</p>
+</div>
+<p>In dem Ereignisfenster siehst du rechts viele Befehle. Diese können per Drag and Drop einfach zum Ereignis hinzugefügt werden. Suche unter dem Punkt <em>Bewegung</em> den Befehl <em>auf Position springen</em> und füge in ein. 
+Gib dann bei <em>X</em> "-geschwindgkeit" ein und setze den Haken bei <em>Relativ</em></p>
+<p>Das heißt, wenn du die linke Pfeiltaste drückst hüpft das Objekt um so viele Pixel nach links (in negativer Richtung an der X-Achse), wie in der Variable <em>geschwindigkeit</em> festgelegt.</p>
+<p><img alt="bewegen" src="../img/dndcode.png" /></p>
+<p>Wiederhole dies nun auch noch für die rechte Pfeiltaste, nur diesmal ohne das Minus vor <em>geschwindigkeit</em> damit sich das Objekt nach Rechts bewegt.</p>
+<p>Teste das Programm (mit dem Play-Button in der oberen Leiste). Wenn du alles richtig gemacht hast, solltest du mit den Pfeiltasten den Balken nach rechts und links bewegen können.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../sprites/" title="3 Importieren der Sprites" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Zurück
+                </span>
+                3 Importieren der Sprites
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../wall/" title="5 Die Seitenwände" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Weiter
+                </span>
+                5 Die Seitenwände
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Creative Commons CC0
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.9e1f3b71.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.de.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

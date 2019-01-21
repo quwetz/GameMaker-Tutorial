@@ -1,0 +1,572 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Ein Tutorial zur Erstellung eines einfachen Breakout Klons in Gamemaker Studio 2">
+      
+      
+      
+        <meta name="author" content="David Unterweger">
+      
+      
+        <meta name="lang:clipboard.copy" content="In Zwischenablage kopieren">
+      
+        <meta name="lang:clipboard.copied" content="In Zwischenablage kopiert">
+      
+        <meta name="lang:search.language" content="de">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Keine Suchergebnisse">
+      
+        <meta name="lang:search.result.one" content="1 Suchergebnis">
+      
+        <meta name="lang:search.result.other" content="# Suchergebnisse">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>3 Importieren der Sprites - Gamemaker Tutorial - Brickout</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.11e41852.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#03a9f4">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#3-importieren-der-sprites" tabindex="1" class="md-skip">
+        Zum Inhalt
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Gamemaker Tutorial - Brickout" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Gamemaker Tutorial - Brickout
+              </span>
+              <span class="md-header-nav__topic">
+                3 Importieren der Sprites
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Suchbegriff eingeben
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Gamemaker Tutorial - Brickout" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Gamemaker Tutorial - Brickout
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="0 Einleitung" class="md-nav__link">
+      0 Einleitung
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="1 Installation" class="md-nav__link">
+      1 Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../firststeps/" title="2 Erste Schritte" class="md-nav__link">
+      2 Erste Schritte
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3 Importieren der Sprites
+      </label>
+    
+    <a href="./" title="3 Importieren der Sprites" class="md-nav__link md-nav__link--active">
+      3 Importieren der Sprites
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importieren-der-sprites-in-gamemaker" title="Importieren der Sprites in Gamemaker" class="md-nav__link">
+    Importieren der Sprites in Gamemaker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ziegel" title="3.1 Ziegel" class="md-nav__link">
+    3.1 Ziegel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ball" title="3.2 Ball" class="md-nav__link">
+    3.2 Ball
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-balken" title="3.3 Balken" class="md-nav__link">
+    3.3 Balken
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-wand" title="3.4 Wand" class="md-nav__link">
+    3.4 Wand
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bar/" title="4 Der Balken" class="md-nav__link">
+      4 Der Balken
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wall/" title="5 Die Seitenwände" class="md-nav__link">
+      5 Die Seitenwände
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ball1/" title="6 Der Ball" class="md-nav__link">
+      6 Der Ball
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../brick/" title="7 Die Ziegel" class="md-nav__link">
+      7 Die Ziegel
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importieren-der-sprites-in-gamemaker" title="Importieren der Sprites in Gamemaker" class="md-nav__link">
+    Importieren der Sprites in Gamemaker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ziegel" title="3.1 Ziegel" class="md-nav__link">
+    3.1 Ziegel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ball" title="3.2 Ball" class="md-nav__link">
+    3.2 Ball
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-balken" title="3.3 Balken" class="md-nav__link">
+    3.3 Balken
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-wand" title="3.4 Wand" class="md-nav__link">
+    3.4 Wand
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="3-importieren-der-sprites">3. Importieren der Sprites<a class="headerlink" href="#3-importieren-der-sprites" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Ziele</p>
+<p>In diesem Kapitel wirst die Grafiken für dein Spiel herunterladen und in das Spiel importieren.</p>
+</div>
+<hr />
+<p>Für das Spiel benötigen wir 2D-Grafiken die wir als Sprites in unser Spiel einbauen.</p>
+<p><a href="https://www.opengameart.org">https://www.opengameart.org</a> ist eine großartige Quelle für GameAssets(Sprites, Sounds, 3D-Modelle, etc.) die du für deine Games verwenden kannst.</p>
+<div class="admonition warning">
+<p class="admonition-title">Achtung</p>
+<p>Die auf OpengameArts zur Verfügung gestellten Assets unterliegen selbstverständlich trotzdem einem Copyright. Du musst immer sicher stellen, dass du die Copyrightbedingungen nicht verletzt, wenn du Assets aus dem Internet herunterlädst. </p>
+</div>
+<hr />
+<p>Für unseren Breakout-Klon verwenden wir <a href="https://opengameart.org/content/breakout-brick-breaker-tile-set-free">Breakout (Brick Breaker) Tile Set - Free</a></p>
+<p>Wenn du auf den Link klickst siehst du, dass diese Grafiken unter der <strong>CC0</strong>-Lizenz stehen. Das bedeutet, du kannst die Assets für eigene Projekte (sogar kommerziell) verwenden, verändern, weitergeben darfst. Mehr Infos dazu <a href="https://creativecommons.org/publicdomain/zero/1.0/">hier</a></p>
+<h2 id="importieren-der-sprites-in-gamemaker">Importieren der Sprites in Gamemaker<a class="headerlink" href="#importieren-der-sprites-in-gamemaker" title="Permanent link">&para;</a></h2>
+<p>Lade dir das Paket von <a href="https://opengameart.org/content/breakout-brick-breaker-tile-set-free">hier</a> runter und entpacke es in einen geeigneten Ordner.</p>
+<h3 id="31-ziegel">3.1 Ziegel<a class="headerlink" href="#31-ziegel" title="Permanent link">&para;</a></h3>
+<p>Gehe wieder zurück in Gamemaker. Klicke unter <strong>Ressourcen</strong> mit der rechten Maustaste auf <strong>Sprites</strong> und dann auf <strong>Sprite aus Bild(ern) erstellen</strong></p>
+<p><img alt="import sprite" src="../img/importSprite.png" /></p>
+<p>Gehe dann im entpackten Verzeichnis in den Unterordner "Breakout Tile Set Free\PNG" und öffne <strong>01-Breakout-Tiles.png</strong></p>
+<p><img alt="select file" src="../img/selectFile.png" /></p>
+<p>Nun siehst du im Workspace die Einstellungen des gerade importierten Sprites.</p>
+<p>Benenne das Sprite um in "spr_Ziegel" und ändere die Größe des Bildes über Bild skalieren auf 64x21 Pixel.</p>
+<p><img alt="Sprite Settings" src="../img/spriteSettings.png" /></p>
+<p>Wichtig ist auch, dass bei Kollisionsmaske <em>automatisch</em> und <em>Rechteck</em> eingestellt ist.</p>
+<div class="admonition tip">
+<p class="admonition-title">Kollisionsmaske</p>
+<p>Eine Kollision zweier Objekte findet immer dann statt, wenn sich die Kollisionsmasken der Sprites dieser Objekte überlappen. Das ist wichtig um z.B. festzustellen wann die Kugel den Ziegel berührt. Es ist wichtig immer möglichst einfache Formen für die Kollisionsmaske zu verwenden, da die Berechnungen zur Kollisionserkennung für komplexe Figuren sehr aufwändig sind und zu Lags (Ruckeln) im Spiel führen kann.</p>
+</div>
+<h3 id="32-ball">3.2 Ball<a class="headerlink" href="#32-ball" title="Permanent link">&para;</a></h3>
+<p>Importiere wie in 3.1 das Sprite für den Ball. Verwende hierfür die Datei <strong>58-Breakout-Tiles.png</strong> und benenne das Sprite "spr_Ball"</p>
+<p>Ändere die Skalierung auf 32x32 Pixel und stelle die Kollisionsmaske auf "Ellipse"</p>
+<p>Stelle außerdem die Koordinaten des Ursprungs des Sprites auf "Mitte mittig"</p>
+<h3 id="33-balken">3.3 Balken<a class="headerlink" href="#33-balken" title="Permanent link">&para;</a></h3>
+<p>Importiere nun das Sprite für den Balken. Verwende die Datei <strong>50-Breakout-Tiles.png</strong>, benenne es "spr_Balken", stelle die Skalierung auf 121x32 Pixel und die Kollisionsmaske auf "Präzise"</p>
+<p>Stelle außerdem die Koordinaten des Ursprungs des Sprites auf "Mitte mittig"</p>
+<p><img alt="balken" src="../img/balkenSprite.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Hinweis</p>
+<p>Dass diese Kollisionsmasken ein bisschen langsamer sind, ist nicht so schlimm, da in dem Spiel nur ein Balken und ein Ball vorkommen. (Für Objekte von denen es viele Instanzen gibt, sollte man Fall die Kollisionsmaske "Präzse" nicht verwenden)</p>
+</div>
+<h3 id="34-wand">3.4 Wand<a class="headerlink" href="#34-wand" title="Permanent link">&para;</a></h3>
+<p>Zuletzt erstellen wir noch ein einfärbiges Sprite für die Wände oben und an den Seiten. Klicke dafür wieder mit der rechten Maustaste auf <strong>Sprites</strong> und dann auf <strong>Sprite erstellen</strong></p>
+<p>Mach dann einen Doppelklick auf das leere Bild des Sprites (Siehe Screenshot unten) und fülle das Bild einfach mit einer Farbe deiner Wahl. Gib dem Sprite anschließend noch den Namen "spr_Wand"</p>
+<p><img alt="draw Sprite" src="../img/drawSprite.png" /></p>
+<hr />
+<p>Du solltest nun die vier Sprites für Ziegel, Ball, Balken und Wand in deinem Projekt haben.</p>
+<p><img alt="sprites" src="../img/sprites.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../firststeps/" title="2 Erste Schritte" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Zurück
+                </span>
+                2 Erste Schritte
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../bar/" title="4 Der Balken" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Weiter
+                </span>
+                4 Der Balken
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Creative Commons CC0
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.9e1f3b71.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.de.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -1,0 +1,40 @@
+# Project information
+site_name: Gamemaker Tutorial - Brickout
+site_description: 'Ein Tutorial zur Erstellung eines einfachen Breakout Klons in Gamemaker Studio 2'
+site_author: 'David Unterweger'
+
+nav:
+    - 0 Einleitung: index.md
+    - 1 Installation: installation.md
+    - 2 Erste Schritte: firststeps.md
+    - 3 Importieren der Sprites: sprites.md
+    - 4 Der Balken: bar.md
+    - 5 Die Seitenwände: wall.md
+    - 6 Der Ball: ball1.md
+    - 7 Die Ziegel: brick.md
+    
+    
+# Configuration
+theme:
+  name: 'material'
+  language: 'de'
+  palette:
+    primary: 'light blue'
+    accent: 'orange'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  highlightjs: true
+
+# Copyright
+copyright: 'Creative Commons CC0'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: true
+  - toc:
+      permalink: true
+  - footnotes
+  - pymdownx.details

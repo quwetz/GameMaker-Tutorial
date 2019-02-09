@@ -56,3 +56,18 @@ Füge den Block *Umkehren* rechts (!) an den *Wenn Objekt am Ort ist* Block an u
 	Wenn du den Block nicht von Rechts anhängst und das Ganze bei dir so aussieht:  
 	![achtung](img/error.png)  
 	Dann wird die Geschwindigkeit immer umgekehrt und nicht nur, wenn die Bedingung im Block darüber erfüllt ist.
+
+Implementiere nun Punkt 3. aus dem oberen Algorithmus.
+Zuerst benötigst du den *Else*-Block. Füge diesen hinten an den *Wenn Objekt am Ort ist* an.  
+Hänge an den *Else*-Block von rechts einen *Wenn Objekt am Ort ist* Block an, mache die nötigen Einstellungen und kehre die Geschwindigkeit in vertikal um, wenn die Bedingung zutrifft.
+
+![algo2](img/algo2.png)
+
+!!!Tip "Hinweis"
+	Der *Else*-Block wird in Gamemaker fälschlicherweise mit *Dann* übersetzt. Eine korrekte Übersetzung wäre *Sonst*
+	
+Im Letzten Schritt muss nun der Ziegel zerstört werden. Verwende dafür den Block *Instanz zerstören* und hänge ihn so an, dass die Instanz zum Schluss zerstört wird. Wichtig ist, dass du bei *Instanz zerstören* bei *Anzuwenden auf* **andere** auswählst, sonst wird der Ball zerstört.
+
+![instanz zerstören](img/destroyInstance.png)
+
+Teste das Spiel!

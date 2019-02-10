@@ -40,7 +40,7 @@
     
     
       
-        <title>7 Die Ziegel - Gamemaker Tutorial - Brickout</title>
+        <title>8 Game Over - Gamemaker Tutorial - Brickout</title>
       
     
     
@@ -84,7 +84,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#71-kollision-ball-und-ziegel" tabindex="1" class="md-skip">
+      <a href="#71-feststellen-ob-der-ball-hinunterfallt" tabindex="1" class="md-skip">
         Zum Inhalt
       </a>
     
@@ -110,7 +110,7 @@
                 Gamemaker Tutorial - Brickout
               </span>
               <span class="md-header-nav__topic">
-                7 Die Ziegel
+                8 Game Over
               </span>
             
           
@@ -263,6 +263,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../brick/" title="7 Die Ziegel" class="md-nav__link">
+      7 Die Ziegel
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -272,11 +284,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        7 Die Ziegel
+        8 Game Over
       </label>
     
-    <a href="./" title="7 Die Ziegel" class="md-nav__link md-nav__link--active">
-      7 Die Ziegel
+    <a href="./" title="8 Game Over" class="md-nav__link md-nav__link--active">
+      8 Game Over
     </a>
     
       
@@ -288,16 +300,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#71-kollision-ball-und-ziegel" title="7.1 Kollision Ball und Ziegel" class="md-nav__link">
-    7.1 Kollision Ball und Ziegel
+  <a href="#71-feststellen-ob-der-ball-hinunterfallt" title="7.1 Feststellen ob der Ball hinunterfällt" class="md-nav__link">
+    7.1 Feststellen ob der Ball hinunterfällt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-game-over" title="7.2 Game Over" class="md-nav__link">
+    7.2 Game Over
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#feststellen-von-welcher-seite-der-ball-kollidiert" title="Feststellen von welcher Seite der Ball kollidiert" class="md-nav__link">
-    Feststellen von welcher Seite der Ball kollidiert
+  <a href="#721-gameover-text-anzeigen" title="7.2.1 GameOver Text anzeigen" class="md-nav__link">
+    7.2.1 GameOver Text anzeigen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722-spiel-neu-starten" title="7.2.2 Spiel neu starten" class="md-nav__link">
+    7.2.2 Spiel neu starten
   </a>
   
 </li>
@@ -315,18 +341,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../GameOver/" title="8 Game Over" class="md-nav__link">
-      8 Game Over
-    </a>
   </li>
 
     
@@ -349,16 +363,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#71-kollision-ball-und-ziegel" title="7.1 Kollision Ball und Ziegel" class="md-nav__link">
-    7.1 Kollision Ball und Ziegel
+  <a href="#71-feststellen-ob-der-ball-hinunterfallt" title="7.1 Feststellen ob der Ball hinunterfällt" class="md-nav__link">
+    7.1 Feststellen ob der Ball hinunterfällt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-game-over" title="7.2 Game Over" class="md-nav__link">
+    7.2 Game Over
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#feststellen-von-welcher-seite-der-ball-kollidiert" title="Feststellen von welcher Seite der Ball kollidiert" class="md-nav__link">
-    Feststellen von welcher Seite der Ball kollidiert
+  <a href="#721-gameover-text-anzeigen" title="7.2.1 GameOver Text anzeigen" class="md-nav__link">
+    7.2.1 GameOver Text anzeigen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722-spiel-neu-starten" title="7.2.2 Spiel neu starten" class="md-nav__link">
+    7.2.2 Spiel neu starten
   </a>
   
 </li>
@@ -385,68 +413,48 @@
               
                 
                 
-                  <h1>7 Die Ziegel</h1>
+                  <h1>8 Game Over</h1>
                 
                 <div class="admonition abstract">
 <p class="admonition-title">Ziele</p>
-<p>In diesem Kapitel wirst die Ziegel erstellen und die Kollisionen zwischen Ziegel und Ball programmieren.</p>
+<p>In diesem Kapitel wirst du einen GameOver Text einfügen, wenn der Ball hinunter fällt und das Spiel anschließend neu starten.</p>
 </div>
 <hr />
-<p>Erstelle ein Objekt mit dem Namen "obj_Ziegel" und weise ihm das Sprite <em>spr_Ziegel</em> zu.</p>
-<p>Füge dann einige Instanzen der Ziegel per Drag and Drop in den <em>room0</em> ein.</p>
-<p>Es sollte in etwa so aussehen:</p>
-<p><img alt="ziegel" src="../img/bricks.png" /></p>
-<h2 id="71-kollision-ball-und-ziegel">7.1 Kollision Ball und Ziegel<a class="headerlink" href="#71-kollision-ball-und-ziegel" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">Ziel</p>
-<p>Wenn der Ball mit einem Ziegel kollidiert, sollen folgende Dinge passieren:<br />
-1. Der Ball soll abprallen, je nachdem von wo aus er auf einen Ziegel trifft<br />
-2. Der Ziegel soll entfernt werden</p>
-</div>
-<p>Die Kollision mit dem Ziegel programmieren wir wieder in einem Ereignis im <em>obj_Ball</em></p>
-<p>Gehe also im Workspace zu <em>obj_Ball</em> und füge ein Kollsisionsereignis mit <em>obj_Ziegel</em> ein.</p>
-<p>Leider ist das Abprallen diesmal nicht so einfach, wie mit den Seitenwänden, denn wir müssen feststellen ob der Ball von Oben bzw. Unten oder von der Seite mit dem Ziegel kollidiert. Je nachdem welcher Fall auftritt ist, müssen wir dann einfach nur wieder die Richtung in horizontaler oder vertikaler Richtung umkehren. (wie in 6.3)</p>
-<h3 id="feststellen-von-welcher-seite-der-ball-kollidiert">Feststellen von welcher Seite der Ball kollidiert<a class="headerlink" href="#feststellen-von-welcher-seite-der-ball-kollidiert" title="Permanent link">&para;</a></h3>
-<div class="admonition tip">
-<p class="admonition-title">Die Variablen <em>hspeed</em> und <em>vspeed</em></p>
-<p>In <em>hspeed</em> wird die horizontale (also seitliche) Geschwindigkeit eines Objekts gespeichert. Das ist die Anzahl an Pixel, die sich ein Objekt in jedem Schritt (Step) der Gameloop nach rechts bzw. links bewegt.<br />
-In <em>vspeed</em> wird die vertikale (also oben/unten) Geschwindigkeit eines Objekts gespeichert.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Kollisionshandling in Gamemaker</p>
-<p>Das Kollisionsereignis in Gamemaker wird aufgerufen, wenn sich die Kollisionsmasken zweier Objekte bereits überlappen. (Nicht kurz davor!)</p>
-</div>
-<p>Zum Zeitpunkt an dem eine Kollision auftritt, liegt der Ball bereits über dem Ziegel. Um festzustellen ob der Ball den Ziegel von der Seite oder von unten/oben trifft gehen wir folgendermaßen vor:</p>
+<p>Wenn der Ball hinunter fällt, soll das Spiel verloren sein, ein GameOver Text angezeigt werden und nach ein paar Sekunden soll das Spiel neu starten.</p>
+<h2 id="71-feststellen-ob-der-ball-hinunterfallt">7.1 Feststellen ob der Ball hinunterfällt<a class="headerlink" href="#71-feststellen-ob-der-ball-hinunterfallt" title="Permanent link">&para;</a></h2>
+<p>Eine einfache Möglichkeit festzustellen wenn der Ball hinunterfällt ist folgende:</p>
+<p>Füge ein neues GameObject hinzu, nenne es <em>obj_Boden</em> und gib ihm das Sprite <em>spr_Wand</em></p>
+<p>Füge dann eine Instanz dieses Objekts außerhalb des Raums am unteren Spielfeldrand ein. (Es soll im Spiel nicht zu sehen sein)</p>
+<p><img alt="boden" src="../img/boden.png" /></p>
+<p>Wenn der Ball nun mit diesem Objekt kollidiert, wissen wir, dass das Spiel verloren ist.</p>
+<h2 id="72-game-over">7.2 Game Over<a class="headerlink" href="#72-game-over" title="Permanent link">&para;</a></h2>
+<p>Erstelle im <em>obj_Boden</em> eine Variable vom Typ <em>Bool</em> und nenne sie <em>gameOver</em>. Diese Variable soll zu Beginn <em>false</em> sein.</p>
+<p><img alt="gameover variable" src="../img/gameOverVar.png" /></p>
+<p>Erstelle dann ein Kollisionsereignis mit <em>obj_Ball</em> in dem folgende Dinge passieren sollen:</p>
 <ol>
-<li>Eine Kollision tritt auf.<br />
-<img alt="koll1" src="../img/brickcolldown.png" /></li>
-<li>Wir überprüfen, ob eine Kollision stattfindet, wenn wir den Ball um <em>-vspeed</em>-Pixel vertikal verschieben. Ist das der Fall muss die Kollision von der Seite entstanden sein. Wir müssen die Richtung des Balls in horizontaler Richtung umkehren. </li>
-<li>Ist die Bedingung in 2. nicht erfüllt überprüfen wir, ob der Ball immer noch kollidiert, wenn wir ihn um <em>-hspeed</em> Pixel in seitlicher Richtung verschieben. Wenn dann noch immer eine Kollision stattfindet, muss die Kollision von oben oder unten entstanden sein und wir müssen die Richtung vertikal umkehren.</li>
-<li>Zum Schluss muss man nur noch die Instanz des Ziegels zerstören</li>
+<li><em>gameOver</em> auf <em>true</em> setzen</li>
+<li>Einen Alarm-Countdown starten, der festlegt nach wie vielen Sekunden das Spiel neu gestartet werden soll.</li>
+<li>Die Instanz des Balls zerstören (Bedenke hier, dass der Ball und nicht de Boden zerstört werden soll)</li>
 </ol>
-<p><strong>Diesen Algorithmus implementieren wir nun:</strong></p>
-<p>Suche in dem Kollisionsereignis zuerst nach <em>Wenn Objekt am Ort ist</em> unter Kollisionen. Gib als Objekt <em>obj_Ziegel</em> an und bei Y "-vspeed". Setze außerdem die beiden Häkchen bei <em>Relativ</em><br />
-Diese Bedingung überprüft nun, ob eine Kollision mit einer Instanz von <em>obj_Ziegel</em> entstehen würde, wenn der Ball an der Position (x,y-vspeed) wäre.
-<img alt="coll" src="../img/coll1.png" /></p>
-<p>Füge den Block <em>Umkehren</em> rechts (!) an den <em>Wenn Objekt am Ort ist</em> Block an und stelle die Richtung auf <em>Horizontal</em>
-<img alt="coll2" src="../img/coll2.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Achtung</p>
-<p>Wenn du den Block nicht von Rechts anhängst und das Ganze bei dir so aussieht:<br />
-<img alt="achtung" src="../img/error.png" /><br />
-Dann wird die Geschwindigkeit immer umgekehrt und nicht nur, wenn die Bedingung im Block darüber erfüllt ist.</p>
-</div>
-<p>Implementiere nun Punkt 3. aus dem oberen Algorithmus.
-Zuerst benötigst du den <em>Else</em>-Block. Füge diesen hinten an den <em>Wenn Objekt am Ort ist</em> an.<br />
-Hänge an den <em>Else</em>-Block von rechts einen <em>Wenn Objekt am Ort ist</em> Block an, mache die nötigen Einstellungen und kehre die Geschwindigkeit in vertikal um, wenn die Bedingung zutrifft.</p>
-<p><img alt="algo2" src="../img/algo2.png" /></p>
+<p>Dein Code sollte in etwa so aussehen:</p>
 <div class="admonition tip">
-<p class="admonition-title">Hinweis</p>
-<p>Der <em>Else</em>-Block wird in Gamemaker fälschlicherweise mit <em>Dann</em> übersetzt. Eine korrekte Übersetzung wäre <em>Sonst</em></p>
+<p class="admonition-title">Alarme</p>
+<p>Ein Alarm in Gamemaker ist ein Timer, den man setzen kann. Es gibt zwölf verschiedene Alarme (Nummeriert von 0 bis 11)<br />
+Wenn man einen Alarm setzt zb. <em>Alarm[0] auf 10</em> Dann wird nach 10 Sekunden das Ereignis <em>Alarm 0</em> ausgelöst.</p>
 </div>
-<p>Im Letzten Schritt muss nun der Ziegel zerstört werden. Verwende dafür den Block <em>Instanz zerstören</em> und hänge ihn so an, dass die Instanz zum Schluss zerstört wird. Wichtig ist, dass du bei <em>Instanz zerstören</em> bei <em>Anzuwenden auf</em> <strong>andere</strong> auswählst, sonst wird der Ball zerstört.</p>
-<p><img alt="instanz zerstören" src="../img/destroyInstance.png" /></p>
-<p>Teste das Spiel!</p>
+<p><img alt="alarmcode" src="../img/alarm.png" /></p>
+<h3 id="721-gameover-text-anzeigen">7.2.1 GameOver Text anzeigen<a class="headerlink" href="#721-gameover-text-anzeigen" title="Permanent link">&para;</a></h3>
+<p>!!Tip "Hinweis"
+    Wenn man in Gamemaker irgendetwas auf den Bildschirm malen möchte (z.B. einen Text anzeigen), dann muss man dies immer in einem <em>Zeichnen</em>-Ereignis machen!</p>
+<p>Erstelle im <em>obj_Boden</em> ein <em>GUI zeichnen</em> Ereignis.<br />
+Überprüfe mit <em>Wenn Variable</em> ob <em>gameOver</em> <em>true</em> ist. Falls ja, dann zeichne mit dem Block <em>Transformierten Wert Zeichnen</em> den Text "Game Over" in die Bildschirmmitte.<br />
+(Mit den Blöcken <em>Textausrichtung festlegen</em> und <em>Zeichenfarbe festlegen</em> kannst du weitere Einstellungen vornehmen)</p>
+<p><img alt="draw Game Over Text" src="../img/drawGameOverText.png" /></p>
+<h3 id="722-spiel-neu-starten">7.2.2 Spiel neu starten<a class="headerlink" href="#722-spiel-neu-starten" title="Permanent link">&para;</a></h3>
+<p>Wenn der <em>Alarm 0</em> ausgelöst wird (Dieser wurde in 7.2 gestellt) soll das Spiel neu gestartet werden.</p>
+<p>Erstelle ein Ereignis <em>Alarm 0</em> in <em>obj_Boden</em> und füge den Block <em>Raum neu starten</em> ein.</p>
+<p><img alt="neu starten" src="../img/restartGame.png" /></p>
+<p>Teste!</p>
                 
                   
                 
@@ -467,7 +475,7 @@ Hänge an den <em>Else</em>-Block von rechts einen <em>Wenn Objekt am Ort ist</e
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ball1/" title="6 Der Ball" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../brick/" title="7 Die Ziegel" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -476,25 +484,11 @@ Hänge an den <em>Else</em>-Block von rechts einen <em>Wenn Objekt am Ort ist</e
                 <span class="md-footer-nav__direction">
                   Zurück
                 </span>
-                6 Der Ball
+                7 Die Ziegel
               </span>
             </div>
           </a>
         
-        
-          <a href="../GameOver/" title="8 Game Over" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Weiter
-                </span>
-                8 Game Over
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>

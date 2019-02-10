@@ -433,14 +433,15 @@
 <p>Erstelle dann ein Kollisionsereignis mit <em>obj_Ball</em> in dem folgende Dinge passieren sollen:</p>
 <ol>
 <li><em>gameOver</em> auf <em>true</em> setzen</li>
-<li>Einen Alarm-Countdown starten, der festlegt nach wie vielen Sekunden das Spiel neu gestartet werden soll.</li>
+<li>Einen Alarm-Countdown starten, der festlegt nach wie vielen Frames das Spiel neu gestartet werden soll.</li>
 <li>Die Instanz des Balls zerstören (Bedenke hier, dass der Ball und nicht de Boden zerstört werden soll)</li>
 </ol>
 <p>Dein Code sollte in etwa so aussehen:</p>
 <div class="admonition tip">
 <p class="admonition-title">Alarme</p>
 <p>Ein Alarm in Gamemaker ist ein Timer, den man setzen kann. Es gibt zwölf verschiedene Alarme (Nummeriert von 0 bis 11)<br />
-Wenn man einen Alarm setzt zb. <em>Alarm[0] auf 10</em> Dann wird nach 10 Sekunden das Ereignis <em>Alarm 0</em> ausgelöst.</p>
+Wenn man einen Alarm setzt zb. <em>Alarm[0] auf 10*room_speed</em> Dann wird nach 10 Sekunden das Ereignis <em>Alarm 0</em> ausgelöst.
+(<em>room_speed</em> ist die Anzahl an Frames pro Sekunde)</p>
 </div>
 <p><img alt="alarmcode" src="../img/alarm.png" /></p>
 <h3 id="721-gameover-text-anzeigen">7.2.1 GameOver Text anzeigen<a class="headerlink" href="#721-gameover-text-anzeigen" title="Permanent link">&para;</a></h3>

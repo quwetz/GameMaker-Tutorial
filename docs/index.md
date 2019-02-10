@@ -1,8 +1,5 @@
 # Willkommen beim GameMaker Tutorial für Brickout - Ein Breakout Klon
 
-!!!Warning "Achtung"
-	Dieses Tutorial ist noch Work in Progress.
-
 ## Über dieses Tutorial
 
 In diesem Tutorial wird erklärt, wie man ganz einfach mithilfe von GameMaker Studio 2 ein eigenes Computerspiel erstellen kann.  

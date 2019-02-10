@@ -27,14 +27,15 @@ Erstelle im *obj_Boden* eine Variable vom Typ *Bool* und nenne sie *gameOver*. D
 Erstelle dann ein Kollisionsereignis mit *obj_Ball* in dem folgende Dinge passieren sollen:
 
 1. *gameOver* auf *true* setzen
-2. Einen Alarm-Countdown starten, der festlegt nach wie vielen Sekunden das Spiel neu gestartet werden soll.
+2. Einen Alarm-Countdown starten, der festlegt nach wie vielen Frames das Spiel neu gestartet werden soll.
 3. Die Instanz des Balls zerstören (Bedenke hier, dass der Ball und nicht de Boden zerstört werden soll)
 	
 Dein Code sollte in etwa so aussehen:
 
 !!!Tip "Alarme"
 	Ein Alarm in Gamemaker ist ein Timer, den man setzen kann. Es gibt zwölf verschiedene Alarme (Nummeriert von 0 bis 11)  
-	Wenn man einen Alarm setzt zb. *Alarm[0] auf 10* Dann wird nach 10 Sekunden das Ereignis *Alarm 0* ausgelöst.
+	Wenn man einen Alarm setzt zb. *Alarm[0] auf 10\*room_speed* Dann wird nach 10 Sekunden das Ereignis *Alarm 0* ausgelöst.
+	(*room_speed* ist die Anzahl an Frames pro Sekunde)
 	
 ![alarmcode](img/alarm.png)
 
